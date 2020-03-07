@@ -79,7 +79,8 @@ function getData() {
       url: "data.php",
       success: function( result ) {
         var data = JSON.parse(result);
-        console.log(data);
+        console.log("result: "+result)
+        console.log("data: "+data);
       }
     });
 }
