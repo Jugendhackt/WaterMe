@@ -78,7 +78,7 @@ function getData() {
     $.ajax({
       url: "data.php",
       success: function( result ) {
-        result = result.replace("\n", "");
+        result = result.replace(\n, "");
         console.log("result: "+result);
         var data = JSON.parse(result);
         console.log("data: "+data);
