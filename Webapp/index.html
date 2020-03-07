@@ -1,20 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8"> 
 	<title>Water Me!</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="chart.js"></script>
+    <script type="text/javascript" src="jquery.js"></script>
+     <h1 align="center">Water Me!</h1> 
 </head>
 <body>
 <div class="grid-container">
   <div class="Heading"></div>
   <div class="Diagramm"><canvas id="myChart" width="250" height="100"></canvas></div>
   <div class="Steckbrief"><img src="6665-2.jpg"></div>
+  <div class="Buttons">
+     
+     <form action="/action_page.php">
+  <p>Bewässerungsmöglichkeiten:</p>
+    <button>
+  <input type="radio" id="Manuell" name="gender" value="Manuell" >
+  <label for="Manuell">Manuell</label><br>
+    </button> 
+    <br> 
+    <button>
+  <input type="radio" id="Automatisch" name="gender" value="Automatisch">
+  <label for="Automatisch">Automatisch</label><br>
+    </button>
+
+  <br>  
+
+  <input type="submit" value="Submit">
+</form>
+    
+  <br><br><br>
+
+  </div>
 </div>
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'radar',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
@@ -49,6 +74,16 @@ var myChart = new Chart(ctx, {
         }
     }
 });
+function getData() {
+    $.ajax({
+      url: "getmyimportantdata.php",
+      success: function( result ) {
+        console.log(result);
+      }
+    });
+}
+
+setInterval(getData, 5000);
 </script>
 </body>
 </html>
