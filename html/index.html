@@ -78,7 +78,7 @@ function getData() {
     $.ajax({
       url: "data.php",
       success: function( result ) {
-        result = result;.replace("/\r?\n|\r/g", "");
+        result = result.replace("/\r?\n|\r/g", "");
         console.log("result: "+result);
         var data = JSON.parse(result);
         console.log("data: "+data);
