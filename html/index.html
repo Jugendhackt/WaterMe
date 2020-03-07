@@ -78,10 +78,11 @@ function getData() {
     $.ajax({
       url: "data.php",
       success: function( result ) {
-        result = result.replace("/(\r\n|\n|\r)/gm", "");
+        result = result.replace("\r\n", "\\n");
         console.log("result: "+result);
         var data = JSON.parse(result);
         console.log("data: "+data);
+        console.table("data: "+data);
       }
     });
 }
