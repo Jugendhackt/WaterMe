@@ -1,12 +1,8 @@
 import serial
-ser = serial.Serial('/dev/ttyACM0')
-ser.flushInput()
-
-while True:
+serial = serial.Serial('/dev/ttyACM0', baudrate=115200, timeout=1.0)
+while True :
     try:
-        ser_bytes = ser.readline()
-        decoded_bytes = float(ser_bytes[0:len(ser_bytes)-2].decode("utf-8"))
-        print(decoded_bytes)
+        state=serial.readline()
+        print(state)
     except:
-        print("Keyboard Interrupt")
-        break
+        pass
