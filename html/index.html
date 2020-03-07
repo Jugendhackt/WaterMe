@@ -78,9 +78,9 @@ function getData() {
     $.ajax({
       url: "data.php",
       success: function( result ) {
+        console.log("result: "+result);
         var data = JSON.parse(result);
         console.log("data: "+data);
-        console.log("result: "+result);
       }
     });
 }
