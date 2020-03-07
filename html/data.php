@@ -21,7 +21,7 @@ if ($result->num_rows > 0) {
         echo '{"id": "'.$row["id"].'","timestamp": "'.$row["timestamp"].'","data": "'.$row["data"].'"}';
         $counter++;
         if ($counter < 10) {
-        	echo ",<br>";
+        	echo ",";
         }
     }
 } else {
