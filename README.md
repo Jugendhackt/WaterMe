@@ -1,2 +1,2 @@
 # WaterMe
-Hallo
+Serial für Mac: https://www.decisivetactics.com/products/serial/
