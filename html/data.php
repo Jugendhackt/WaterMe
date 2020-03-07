@@ -18,7 +18,7 @@ echo '{"data":[';
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        echo '{"id": "'.$row["id"].'","timestamp": "'.$row["timestamp"].'","data": "'.($row["data"].trim()).'"}';
+        echo '{"id": "'.$row["id"].'","timestamp": "'.$row["timestamp"].'","data": "'.trim($row["data"]).'"}';
         $counter++;
         if ($counter < 10) {
         	echo ",";
