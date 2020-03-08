@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<script type="text/javascript" src="chart.js"></script>
+  <script type="text/javascript" src="odometer.js"></script>
     <script type="text/javascript" src="jquery.js"></script>
      <h1 align="center"><u>Water Me!</u></h1> 
 </head>
@@ -14,9 +15,10 @@
   <div class="Chart"><canvas id="myChart" width="250" height="100"></canvas></div>
   <div class="Momentaner-Wert"><h2><u>Momentaner Wert</u></h2>
 <br><br>
-<a>Momentanwert:</a>
+<div>Momentanwert:<div class="odometer" id="moment"></div></div>
 <br><br>
-<a>Tageshöchstwert:</a>
+<div>Tageshöchstwert:<div class="odometer"></div></div>
+
 
   </div>
   <div class="Buttons">  <form action="/action_page.php">
@@ -80,6 +82,7 @@ function getData() {
           myChart.data.labels[counter] = row.id;
           counter++;
         }
+        $("#moment").text(myChart.data.datasets[0].data[counter-1])
         myChart.update();
       }
     });
