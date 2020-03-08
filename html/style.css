@@ -4,14 +4,14 @@
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1.4fr 0.6fr 1.2fr 0.8fr 0.1fr 2.1fr 1fr 1fr 1fr 1fr;
-  grid-template-areas: ". . Heading . ." ". Diagramm Diagramm Diagramm ." ". Diagramm Diagramm Diagramm ." ". Diagramm Diagramm Diagramm ." ". Diagramm Diagramm Diagramm ." ". Diagramm Diagramm Diagramm ." ". Diagramm Diagramm Diagramm ." ". Steckbrief Steckbrief Steckbrief ." ". Steckbrief Steckbrief Steckbrief ." ". Steckbrief Steckbrief Steckbrief ." ". Buttons Buttons Buttons ." ". Buttons Buttons Buttons .";
+  grid-template-rows: 0.3fr 1.7fr 1fr 1fr;
+  grid-template-areas: ". . Headline . ." "Momentaner-Wert Momentaner-Wert Chart Chart Chart" ". . Buttons . ." ". . . . .";
 }
 
-.Heading { grid-area: Heading; }
+.Headline { grid-area: Headline; }
 
-.Diagramm { grid-area: Diagramm; }
+.Chart { grid-area: Chart; }
 
-.Steckbrief { grid-area: Steckbrief; }
+.Momentaner-Wert { grid-area: Momentaner-Wert; }
 
 .Buttons { grid-area: Buttons; }

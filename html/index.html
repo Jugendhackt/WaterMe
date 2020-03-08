@@ -6,16 +6,13 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script type="text/javascript" src="chart.js"></script>
     <script type="text/javascript" src="jquery.js"></script>
-     <h1 align="center">Water Me!</h1> 
+     <h1 align="center"><u>Water Me!</u></h1> 
 </head>
-<body>
 <div class="grid-container">
-  <div class="Heading"></div>
-  <div class="Diagramm"><canvas id="myChart" width="250" height="100"></canvas></div>
-  <div class="Steckbrief"><img src="6665-2.jpg"></div>
-  <div class="Buttons">
-     
-     <form action="/action_page.php">
+  <div class="Headline"></div>
+  <div class="Chart"><canvas id="myChart" width="250" height="100"></canvas></div>
+  <div class="Momentaner-Wert"><h2><u>Momentaner Wert</u>/h2></div>
+  <div class="Buttons">  <form action="/action_page.php">
   <p>Bewässerungsmöglichkeiten:</p>
     <button>
   <input type="radio" id="Manuell" name="gender" value="Manuell" >
@@ -36,6 +33,9 @@
 
   </div>
 </div>
+</div>
+     
+   
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
