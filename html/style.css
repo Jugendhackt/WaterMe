@@ -2,6 +2,10 @@
 	margin: 0;
 	font-family: 'Roboto', sans-serif;
 }
+body {
+	padding: 25px;
+	box-sizing: border-box;
+}
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
