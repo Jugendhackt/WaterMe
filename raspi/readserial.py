@@ -18,12 +18,17 @@ while True :
     try:
     	ts = time.time()
     	serial.flushInput()
-        state = serial.readline()
-        print(state)
-        sql = "INSERT INTO zeitverlauf (timestamp, data) VALUES (%s, %s)"
-		val = (ts, state.replace("Avocado:", ""))
-		mycursor.execute(sql, val)
-		mydb.commit()
+      state = serial.readline()
+      print(state)
+      sql = "INSERT INTO zeitverlauf (timestamp, data) VALUES (%s, %s)"
+		  val = (ts, state.replace("Avocado:", ""))
+		  mycursor.execute(sql, val)
+		  mydb.commit()
+      if int(state.replace("Avocado:", "")) < 500:
+        serial.write("$")
+        serial.flush()
+        print("WATER!!!!!")
+        pass
     except:
     	exit()
         pass
