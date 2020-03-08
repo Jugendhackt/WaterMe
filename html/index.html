@@ -67,8 +67,8 @@ function getData() {
         console.log("result: "+result);
         var data = JSON.parse(result);
         console.log(data);
-        for (row of data[0]) {
-          console.log(data.data);
+        for (row of data.data) {
+          console.log(row.data);
         }
       }
     });
