@@ -66,9 +66,12 @@ function getData() {
       success: function( result ) {
         console.log("result: "+result);
         var data = JSON.parse(result);
+        var counter = 0;
         console.log(data); 
         for (row of data.data) {
           console.log(row.data);
+          myChart.data.datasets.data[counter] = row.data;
+          counter++;
         }
       }
     });
