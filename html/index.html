@@ -73,7 +73,7 @@ function getData() {
         console.log(data); 
         for (row of data.data) {
           console.log(row.data);
-          myChart.data.datasets.data[counter] = row.data;
+          myChart.data.datasets[0].data[counter] = row.data;
           counter++;
         }
       }
