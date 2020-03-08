@@ -58,7 +58,7 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: false
                 }
             }]
         }
@@ -74,6 +74,7 @@ function getData() {
         for (row of data.data) {
           console.log(counter+" -> "+row.data);
           myChart.data.datasets[0].data[counter] = row.data;
+          myChart.data.datasets[0].labels[counter] = row.id;
           counter++;
         }
         myChart.update();
