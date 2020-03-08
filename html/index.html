@@ -68,7 +68,6 @@ function getData() {
     $.ajax({
       url: "data.php",
       success: function( result ) {
-        console.log("result: "+result);
         var data = JSON.parse(result);
         var counter = 0;
         console.log(data); 
