@@ -76,6 +76,7 @@ function getData() {
           myChart.data.datasets[0].data[counter] = row.data;
           counter++;
         }
+        myChart.update();
       }
     });
 }
