@@ -60,7 +60,7 @@ var myChart = new Chart(ctx, {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: false
                 }
             }]
         }
@@ -74,10 +74,12 @@ function getData() {
         var counter = 0;
         console.log(data); 
         for (row of data.data) {
-          console.log(row.data);
+          console.log(counter+" -> "+row.data);
           myChart.data.datasets[0].data[counter] = row.data;
+          myChart.data.labels[counter] = row.id;
           counter++;
         }
+        myChart.update();
       }
     });
 }
